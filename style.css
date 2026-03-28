@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: black;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  text-align: center;
+  padding: 40px;
+  width: 400px;
+  background: rgba(0, 10, 30, 0.7);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 50px cyan;
+  animation: flyIn 1.2s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes flyIn {
+  from { opacity: 0; transform: translate(-50%, -150%) scale(0.3); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid cyan;
+  box-shadow: 0 0 30px cyan;
+  order: -1;
+}
+
+.glow {
+  color: #17e6b5;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+    text-shadow:
+      0 0 5px cyan,
+      0 0 10px cyan,
+      0 0 20px cyan,
+      0 0 40px cyan;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    text-shadow:
+      0 0 10px cyan,
+      0 0 25px cyan,
+      0 0 40px cyan,
+      0 0 80px cyan;
+  }
+}
+
+.glow-anim {
+  animation: glowPulse 2.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+#typing {
+  color: #ccc;
+  margin-top: 10px;
+  min-height: 80px; /* вистачає для 4 рядків */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.typing-line {
+  white-space: nowrap;
+  margin: 2px 0;
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  text-decoration: none;
+}
+
+.socials i {
+  margin: 12px;
+  font-size: 28px;
+  color: #00bfff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.socials i:hover { transform: scale(1.3); }
+.fa-discord:hover { color: #5865F2; text-shadow: 0 0 15px #5865F2; }
+.fa-youtube:hover { color: red; text-shadow: 0 0 20px red; }
+.fa-steam:hover { color: #00adee; text-shadow: 0 0 20px #00adee; }
+.fa-tiktok:hover { color: #ff0050; text-shadow: 0 0 20px #ff0050; }
