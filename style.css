@@ -71,7 +71,7 @@ body {
 #typing {
   color: #ccc;
   margin-top: 10px;
-  min-height: 80px;
+  min-height: 100px; /* збільшено для вміщення 5 рядків */
   display: flex;
   flex-direction: column;
   align-items: center;
