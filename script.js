@@ -4,7 +4,6 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// ===== ЗВИЧАЙНІ ЗІРКИ =====
 class Star {
   constructor() { this.reset(); }
   reset() {
@@ -35,7 +34,6 @@ class Star {
   }
 }
 
-// ===== ПАДАЮЧІ ЗІРКИ =====
 class ShootingStar {
   constructor() { this.reset(); }
   reset() {
@@ -70,7 +68,6 @@ class ShootingStar {
   }
 }
 
-// ===== ЧАСТКИ ЗА КУРСОРОМ =====
 class MouseParticle {
   constructor(x,y){
     this.x=x;
@@ -92,7 +89,6 @@ class MouseParticle {
   }
 }
 
-// ===== ІНІЦІАЛІЗАЦІЯ =====
 const stars=[]; for(let i=0;i<400;i++) stars.push(new Star());
 const shootingStars=[]; for(let i=0;i<6;i++) shootingStars.push(new ShootingStar());
 const mouseParticles=[];
@@ -104,7 +100,6 @@ window.addEventListener("mousemove",(e)=>{
   for(let i=0;i<2;i++) mouseParticles.push(new MouseParticle(mouseX,mouseY));
 });
 
-// ===== АНІМАЦІЯ =====
 function animate(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   stars.forEach(s=>s.draw());
@@ -123,7 +118,6 @@ window.addEventListener("resize",()=>{
   canvas.height=window.innerHeight;
 });
 
-// ===== TYPING ПО РЯДКАХ =====
 const lines = [
   "🎮 Геймер",
   "💻 Кодер-початківець",
